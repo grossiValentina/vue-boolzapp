@@ -63,14 +63,15 @@
                             <input type="text" name="nuova chat" placeholder="    Cerca o inizia una nuova chat">
                         </div>
 
-                        <!-- conversations list  -->
+                        <!-- CONTACTS  -->
+
                         <div class="col-friends">
-                            <div class="row-friends">
+                            <div v-for="contact in contacts" class="row-friends">
                                 <div class="photo-profile">
-                                    <img src="img/avatar_1.jpg" alt="avatar 1">
+                                    <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar 1">
                                 </div>
                                 <div class="info">
-                                    <h4>Michele</h4>
+                                    <h4>{{ contact.name }}</h4>
                                     <p>Lorem, ipsum dolor sit amet</p>
                                 </div>
                                 <div class="access">12:00</div>
@@ -103,7 +104,7 @@
                                     <img src="img/avatar_4.jpg" alt="">
                                 </div>
                                 <div class="info">
-                                    <h4>Alessandro B.</h4>
+                                    <h4>Alessandro</h4>
                                     <p>Lorem, ipsum dolor sit amet</p>
                                 </div>
                                 <div class="access">12:00</div>
@@ -114,7 +115,7 @@
                                     <img src="img/avatar_5.jpg" alt="">
                                 </div>
                                 <div class="info">
-                                    <h4>Alessandro L.</h4>
+                                    <h4>Lorenzo</h4>
                                     <p>Lorem, ipsum dolor sit amet</p>
                                 </div>
                                 <div class="access">12:00</div>
@@ -146,43 +147,12 @@
                                     <img src="img/avatar_6.jpg" alt="">
                                 </div>
                                 <div class="info">
-                                    <h4>Fabio</h4>
+                                    <h4>Anna</h4>
                                     <p>Lorem, ipsum dolor sit amet</p>
                                 </div>
                                 <div class="access">12:00</div>
                             </div>
 
-                            <div class="row-friends">
-                                <div class="photo-profile">
-                                    <img src="img/avatar_7.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Claudia</h4>
-                                    <p>Lorem, ipsum dolor sit amet</p>
-                                </div>
-                                <div class="access">12:00</div>
-                            </div>
-
-                            <div class="row-friends">
-                                <div class="photo-profile">
-                                    <img src="img/avatar_7.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Claudia</h4>
-                                    <p>Lorem, ipsum dolor sit amet</p>
-                                </div>
-                                <div class="access">12:00</div>
-                            </div>
-                            <div class="row-friends">
-                                <div class="photo-profile">
-                                    <img src="img/avatar_7.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Claudia</h4>
-                                    <p>Lorem, ipsum dolor sit amet</p>
-                                </div>
-                                <div class="access">12:00</div>
-                            </div>
                         </div>
                     </div>
 
@@ -213,7 +183,8 @@
                         <!-- main column  -->
                         <main>
                             <div class="row-message">
-
+                                
+                                <!-- CONVERSATION  -->
                                 <div class="message sent">
 
                                     <!-- list angle down -->
@@ -229,9 +200,11 @@
                                         </li>
                                     </ul>
 
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sit quo similique,
-                                    excepturi ea, quas odit repellendus, rem earum at praesentium. In rerum nemo ducimus
-                                    deserunt maxime obcaecati ullam omnis.
+                                     <div v-for="(text, index) in contacts" :key="index">
+                                       
+                                        {{  }}
+                                        
+                                     </div>
 
                                     <div class="hour">
                                         16:00
@@ -253,81 +226,16 @@
                                         </li>
                                     </ul>
 
+                                    <div v-for="(text, index) in contacts">
+                                        
+                                        {{  }}
 
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quae sint excepturi,
-                                    delectus suscipit enim, ducimus magni repellat ex aut ab illo? Tempore obcaecati
-                                    iusto
-                                    est. Omnis modi fugit labore!
+                                    </div>
+
                                     <div class="hour">
                                         16:00
                                     </div>
                                 </div>
-
-                                <div class="message received">
-                                    <!-- list angle down -->
-                                    <ul class="angle-list">
-                                        <li>
-                                            <i class="fa-solid fa-angle-down" tabindex="0"></i>
-
-                                            <!-- lista annidata -->
-                                            <ul class="sub-menu">
-                                                <li class="info-message">Info messaggio</li>
-                                                <li class="cancel-message">Cancella messaggio</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quae sint excepturi,
-                                    delectus suscipit enim, ducimus magni repellat ex aut ab illo? Tempore obcaecati
-                                    iusto
-                                    est. Omnis modi fugit labore!
-                                    <div class="hour">
-                                        16:00
-                                    </div>
-                                </div>
-
-                                <div class="message sent">
-                                    <!-- list angle down -->
-                                    <ul class="angle-list">
-                                        <li>
-                                            <i class="fa-solid fa-angle-down" tabindex="0"></i>
-
-                                            <!-- lista annidata -->
-                                            <ul class="sub-menu">
-                                                <li class="info-message">Info messaggio</li>
-                                                <li class="cancel-message">Cancella messaggio</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sit quo similique,
-                                    excepturi ea, quas odit repellendus, rem earum at praesentium. In rerum nemo ducimus
-                                    deserunt maxime obcaecati ullam omnis.
-                                    <div class="hour">
-                                        16:00
-                                    </div>
-                                </div>
-                                <div class="message received">
-                                    <!-- list angle down -->
-                                    <ul class="angle-list">
-                                        <li>
-                                            <i class="fa-solid fa-angle-down" tabindex="0"></i>
-
-                                            <!-- lista annidata -->
-                                            <ul class="sub-menu">
-                                                <li class="info-message">Info messaggio</li>
-                                                <li class="cancel-message">Cancella messaggio</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quae sint excepturi,
-                                    delectus suscipit enim, ducimus magni repellat ex aut ab illo? Tempore obcaecati
-                                    iusto
-                                    est. Omnis modi fugit labore!
-                                    <div class="hour">
-                                        16:00
-                                    </div>
-                                </div>
-
                             </div>
                         </main>
 
