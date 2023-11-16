@@ -5,8 +5,8 @@ const app = createApp({
     return {
 
        indexItem: 0,
-       messageDefoult: "ok:)",
        myMessage: "",
+       messageDefoult: "ok :)",
 
         contacts: [
             {
@@ -176,9 +176,6 @@ const app = createApp({
   },
 
   methods: {
-    addMessage: function() {
-        this.messageDefoult;
-    },
     
     addMyMessage: function(){
         
@@ -189,16 +186,38 @@ const app = createApp({
             
             });
             this.myMessage = "";
+
+           
+           
+           
+            setInterval(() => {
+               this.contacts[this.indexItem].messages.push({
+                 messsage: "messageDefoult",
+                 status: `received`,
+               })
+            }, 2000);
+
             
-        }
-        
-        
-         
-    }
-    
-    
+            
+            
+        },
+},
   
 }).mount("#app");
+
+
+
+
+
+    //addMessage: function() {
+      //  this.contacts[this.indexItem].messages.push({
+            
+        //    message: this.messageDefoult,
+          //  status: 'received',
+       // });
+        //this.messageDefoult 
+    //},
+    
 
 
 

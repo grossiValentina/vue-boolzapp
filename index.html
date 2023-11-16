@@ -107,9 +107,10 @@
                         <!-- main column  -->
                         <main>
                             <div class="row-message">
-                                
+
                                 <!-- CONVERSATION  -->
-                                <div class="message sent" v-for="(text, index) in contacts[indexItem].messages" :key="index">
+                                <div class="message sent" v-for="(text, index) in contacts[indexItem].messages"
+                                    :key="index">
 
                                     <!-- list angle down -->
                                     <ul class="angle-list">
@@ -133,6 +134,7 @@
 
                                 </div>
 
+                                  
                                 <div class="message received">
                                     <!-- list angle down -->
                                     <ul class="angle-list">
@@ -147,14 +149,15 @@
                                         </li>
                                     </ul>
 
-                                    <div>
-
-                                    </div>
+                                    <div>{{ messageDefoult }}</div>
 
                                     <div class="hour">
                                         16:00
                                     </div>
                                 </div>
+                            
+
+
                             </div>
                         </main>
 
@@ -164,13 +167,14 @@
                                 <div class="smile-icon">
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
-                                
+
                                 <div class="input-footer">
-                                    <input type="text" name="nuovo messaggio" placeholder="   Scrivi un messaggio" v-model="myMessage"
-                                    @keyup.enter="addMyMessage()">
+                                    <input type="text" name="nuovo messaggio" placeholder="   Scrivi un messaggio"
+                                        v-model="myMessage" @keyup.enter="addMyMessage()" 
+                                        @keyup.enter="addMessage">
                                 </div>
-                              
-                                
+
+
                                 <div class="microphone-icone">
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>
