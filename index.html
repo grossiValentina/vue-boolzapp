@@ -66,7 +66,7 @@
                         <!-- CONTACTS  -->
 
                         <div class="col-friends">
-                            <div v-for="contact in contacts" class="row-friends">
+                            <div v-for="(contact, index) in contacts" class="row-friends" @click="indexItem = index">
                                 <div class="photo-profile">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar 1">
                                 </div>
@@ -77,81 +77,7 @@
                                 <div class="access">12:00</div>
                             </div>
 
-                            <div class="row-friends">
-                                <div class="photo-profile">
-                                    <img src="img/avatar_2.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Fabio</h4>
-                                    <p>Lorem, ipsum dolor sit amet</p>
-                                </div>
-                                <div class="access">12:00</div>
-                            </div>
-
-                            <div class="row-friends">
-                                <div class="photo-profile">
-                                    <img src="img/avatar_3.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Samuele</h4>
-                                    <p>Lorem, ipsum dolor sit amet</p>
-                                </div>
-                                <div class="access">12:00</div>
-                            </div>
-
-                            <div class="row-friends">
-                                <div class="photo-profile">
-                                    <img src="img/avatar_4.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Alessandro</h4>
-                                    <p>Lorem, ipsum dolor sit amet</p>
-                                </div>
-                                <div class="access">12:00</div>
-                            </div>
-
-                            <div class="row-friends">
-                                <div class="photo-profile">
-                                    <img src="img/avatar_5.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Lorenzo</h4>
-                                    <p>Lorem, ipsum dolor sit amet</p>
-                                </div>
-                                <div class="access">12:00</div>
-                            </div>
-
-                            <div class="row-friends">
-                                <div class="photo-profile">
-                                    <img src="img/avatar_6.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Claudia</h4>
-                                    <p>Lorem, ipsum dolor sit amet</p>
-                                </div>
-                                <div class="access">12:00</div>
-                            </div>
-
-                            <div class="row-friends">
-                                <div class="photo-profile">
-                                    <img src="img/avatar_7.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Federico</h4>
-                                    <p>Lorem, ipsum dolor sit amet</p>
-                                </div>
-                                <div class="access">12:00</div>
-                            </div>
-                            <div class="row-friends">
-                                <div class="photo-profile">
-                                    <img src="img/avatar_6.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h4>Anna</h4>
-                                    <p>Lorem, ipsum dolor sit amet</p>
-                                </div>
-                                <div class="access">12:00</div>
-                            </div>
+                            
 
                         </div>
                     </div>
@@ -163,10 +89,10 @@
                         <header>
                             <div class="row-header-col-large">
                                 <div class="card-photo">
-                                    <img src="img/avatar_3.jpg" alt="">
+                                    <img :src="`img/avatar${contacts[indexItem].avatar}.jpg`" alt="">
                                 </div>
                                 <div class="card-informations">
-                                    <h4>Michele</h4>
+                                    <h4>{{ contacts[indexItem].name }}</h4>
                                     <p>Ultimo accesso oggi alle 16:26</p>
                                 </div>
                                 <div class="card-icons">
@@ -185,7 +111,7 @@
                             <div class="row-message">
                                 
                                 <!-- CONVERSATION  -->
-                                <div class="message sent">
+                                <div class="message sent" v-for="(text, index) in contacts[indexItem].messages" :key="index">
 
                                     <!-- list angle down -->
                                     <ul class="angle-list">
@@ -200,12 +126,9 @@
                                         </li>
                                     </ul>
 
-                                     <div v-for="(text, index) in contacts" :key="index">
-                                       
-                                        {{  }}
-                                        
-                                     </div>
-
+                                    <div>
+                                        {{ text.message }}
+                                    </div>
                                     <div class="hour">
                                         16:00
                                     </div>
@@ -226,11 +149,7 @@
                                         </li>
                                     </ul>
 
-                                    <div v-for="(text, index) in contacts">
-                                        
-                                        {{  }}
-
-                                    </div>
+                                    
 
                                     <div class="hour">
                                         16:00
