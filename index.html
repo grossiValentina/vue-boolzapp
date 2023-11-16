@@ -77,8 +77,6 @@
                                 <div class="access">12:00</div>
                             </div>
 
-                            
-
                         </div>
                     </div>
 
@@ -149,7 +147,9 @@
                                         </li>
                                     </ul>
 
-                                    
+                                    <div>
+
+                                    </div>
 
                                     <div class="hour">
                                         16:00
@@ -164,9 +164,13 @@
                                 <div class="smile-icon">
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
+                                
                                 <div class="input-footer">
-                                    <input type="" name="nuovo messaggio" placeholder="   Scrivi un messaggio">
+                                    <input type="text" name="nuovo messaggio" placeholder="   Scrivi un messaggio" v-model="myMessage"
+                                    @keyup.enter="addMyMessage()">
                                 </div>
+                              
+                                
                                 <div class="microphone-icone">
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>
