@@ -6,6 +6,7 @@ const app = createApp({
 
        indexItem: 0,
        myMessage: "",
+       searchChat: "",
 
         contacts: [
             {
@@ -192,12 +193,26 @@ const app = createApp({
 
             setTimeout(() => {
                 this.contacts[this.indexItem].messages.push({
-                  message: "ok!",
+                  message: "ok:)",
                   status: `received`,
                 })
-             }, 2000);
+             }, 1000);
             
-        }
+        },
+
+    searchFriend: function() {
+        console.log("ricerca", this.searchChat)
+        //  in minuscolo
+        let search = this.searchChat.toLowerCase()
+        this.contacts.forEach(element => {
+            if (element.name.toLowerCase().includes(search)){
+                element.visible = true;
+            }else {
+                element.visible = false;
+            } 
+            
+        });
+    }
 
 },
   

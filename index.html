@@ -60,13 +60,20 @@
 
                         <!-- row input  -->
                         <div class="row-input">
-                            <input type="text" name="nuova chat" placeholder="    Cerca o inizia una nuova chat">
+
+                            <input v-model="searchChat" type="text" name="nuova chat" placeholder="    Cerca o inizia una nuova chat"
+                            @keyup="searchFriend">
+
                         </div>
 
                         <!-- CONTACTS  -->
 
                         <div class="col-friends">
-                            <div v-for="(contact, index) in contacts" class="row-friends" @click="indexItem = index">
+
+                            <div v-for="(contact, index) in contacts" class="row-friends" 
+                            @click="indexItem = index"
+                            v-show="contact.visible">
+
                                 <div class="photo-profile">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar 1">
                                 </div>
