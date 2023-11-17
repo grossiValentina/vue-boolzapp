@@ -6,7 +6,6 @@ const app = createApp({
 
        indexItem: 0,
        myMessage: "",
-       messageDefoult: "ok :)",
 
         contacts: [
             {
@@ -186,14 +185,14 @@ const app = createApp({
             
             });
             this.myMessage = "";
-            
+            this.addMessage();
         },
 
     addMessage: function() {
 
-            settimeout(() => {
+            setTimeout(() => {
                 this.contacts[this.indexItem].messages.push({
-                  messsage: "messageDefoult",
+                  message: "ok!",
                   status: `received`,
                 })
              }, 2000);

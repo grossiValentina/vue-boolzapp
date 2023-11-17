@@ -135,30 +135,6 @@
 
                                 </div>
 
-                                  
-                                <div class="message received">
-                                    <!-- list angle down -->
-                                    <ul class="angle-list">
-                                        <li>
-                                            <i class="fa-solid fa-angle-down" tabindex="0"></i>
-
-                                            <!-- lista annidata -->
-                                            <ul class="sub-menu">
-                                                <li class="info-message">Info messaggio</li>
-                                                <li class="cancel-message">Cancella messaggio</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-
-                                    <div>{{ messageDefoult }}</div>
-
-                                    <div class="hour">
-                                    
-                                    </div>
-                                </div>
-                            
-
-
                             </div>
                         </main>
 
@@ -172,7 +148,7 @@
                                 <div class="input-footer">
                                     <input type="text" name="nuovo messaggio"   placeholder="   Scrivi un messaggio"
                                     v-model="myMessage" 
-                                    @keyup.enter="addMyMessage(addMessage)">
+                                    @keyup.enter="addMyMessage()">
                                 </div>
 
 
