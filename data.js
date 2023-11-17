@@ -1,5 +1,7 @@
 const { createApp } = Vue;
 
+const dt = luxon.DateTime;
+
 const app = createApp({
   data() {
     return {
@@ -187,6 +189,7 @@ const app = createApp({
             });
             this.myMessage = "";
             this.addMessage();
+            
         },
 
     addMessage: function() {
@@ -209,9 +212,18 @@ const app = createApp({
                 element.visible = true;
             }else {
                 element.visible = false;
-            } 
+            };
             
         });
+    },
+
+    hoursMessage: function(fullData) {
+
+        console.log(fullData);
+        console.log(dt.fromFormat(fullData, "dd/MM/yyyy HH:mm:ss"));
+        const luxonHours = dt.fromFormat(fullData, "dd/MM/yyyy HH:mm:ss").toFormat("HH:mm");
+        return luxonHours;
+        
     }
 
 },
