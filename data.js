@@ -186,21 +186,20 @@ const app = createApp({
             
             });
             this.myMessage = "";
-
-           
-           
-           
-            setInterval(() => {
-               this.contacts[this.indexItem].messages.push({
-                 messsage: "messageDefoult",
-                 status: `received`,
-               })
-            }, 2000);
-
-            
-            
             
         },
+
+    addMessage: function() {
+
+            settimeout(() => {
+                this.contacts[this.indexItem].messages.push({
+                  messsage: "messageDefoult",
+                  status: `received`,
+                })
+             }, 2000);
+            
+        }
+
 },
   
 }).mount("#app");

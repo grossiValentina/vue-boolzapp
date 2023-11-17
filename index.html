@@ -109,7 +109,8 @@
                             <div class="row-message">
 
                                 <!-- CONVERSATION  -->
-                                <div class="message sent" v-for="(text, index) in contacts[indexItem].messages"
+                                <div class="message" :class="text.status" 
+                                v-for="(text, index) in contacts[indexItem].messages"
                                     :key="index">
 
                                     <!-- list angle down -->
@@ -129,7 +130,7 @@
                                         {{ text.message }}
                                     </div>
                                     <div class="hour">
-                                        16:00
+                                        {{ text.date }}
                                     </div>
 
                                 </div>
@@ -152,7 +153,7 @@
                                     <div>{{ messageDefoult }}</div>
 
                                     <div class="hour">
-                                        16:00
+                                    
                                     </div>
                                 </div>
                             
@@ -169,9 +170,9 @@
                                 </div>
 
                                 <div class="input-footer">
-                                    <input type="text" name="nuovo messaggio" placeholder="   Scrivi un messaggio"
-                                        v-model="myMessage" @keyup.enter="addMyMessage()" 
-                                        @keyup.enter="addMessage">
+                                    <input type="text" name="nuovo messaggio"   placeholder="   Scrivi un messaggio"
+                                    v-model="myMessage" 
+                                    @keyup.enter="addMyMessage(addMessage)">
                                 </div>
 
 
